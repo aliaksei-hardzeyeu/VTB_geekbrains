@@ -46,13 +46,11 @@ public class ThreadArray {
             }
         });
 
-
-
         Thread t2 = new Thread(new Runnable() {
             public void run() {
-                for (int i = 0; i < HALF; i++) {
-                    a2[i] = (float) (a2[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) *
-                            Math.cos(0.4f + i / 2));
+                for (int i = 0, j = HALF; i < HALF; i++, j++) { //j так как в формуле зависимость от порядкового номера - нужно это учитывать, чтоб потом склеить вторую часть
+                    a2[i] = (float) (a2[i] * Math.sin(0.2f + j / 5) * Math.cos(0.2f + j / 5) *
+                            Math.cos(0.4f + j / 2));
                 }
             }
         });
@@ -73,7 +71,7 @@ public class ThreadArray {
         long b = System.currentTimeMillis();
 
         System.out.println("Time working 2 : " + (b - a));
-        System.out.println(arr[9999990]);
+        System.out.println(arr.length);
 
     }
 }

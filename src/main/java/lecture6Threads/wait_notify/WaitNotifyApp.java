@@ -2,7 +2,7 @@ package lecture6Threads.wait_notify;
 
 public class WaitNotifyApp {
     private final Object mon = new Object();
-    private volatile char currentLetter = 'A';
+    private char currentLetter = 'A';
 
     public static void main(String[] args) {
         WaitNotifyApp waitNotifyApp = new WaitNotifyApp();

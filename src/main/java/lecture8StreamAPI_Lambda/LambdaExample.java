@@ -30,10 +30,14 @@ public class LambdaExample {
             }
         });
 
-        doSomething(()-> System.out.println());
+        doSomething(()-> System.out.println(100));
+
+        doSomething(() -> System.out.println(204));
     }
 
-    public static void doSomething(Runnable runnableObj) {
-        runnableObj.run();
+
+
+    public static void doSomething(Runnable runnable) {
+        runnable.run();
     }
 }
